@@ -1,0 +1,43 @@
+{
+  "name": "/",
+  "children": [
+    {
+      "name": "RBI",
+      "children": []
+    },
+    {
+      "name": "GOVT of India",
+      "children": []
+    },
+    {
+      "name": "SEBI",
+      "children": [
+        {
+          "name": "hakee",
+          "children": [
+            {
+              "name": "hihf",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IRDAI",
+      "children": []
+    },
+    {
+      "name": "Alert1",
+      "children": []
+    },
+    {
+      "name": "alert",
+      "children": []
+    },
+    {
+      "name": "sa",
+      "children": []
+    }
+  ]
+}

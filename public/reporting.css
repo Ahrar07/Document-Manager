@@ -1,0 +1,40 @@
+body {
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container-reporting {
+  padding: 2rem;
+}
+
+.reporting-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.reporting-header h2 {
+  font-weight: bold;
+}
+
+.table-reporting {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.table-reporting thead {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.table-reporting td,
+.table-reporting th {
+  vertical-align: middle !important;
+}
+
+.btn-status {
+  min-width: 120px;
+}

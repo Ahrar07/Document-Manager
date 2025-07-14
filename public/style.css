@@ -1,0 +1,169 @@
+/* === Background Theme with Glassmorphism === */
+body.bg-pattern {
+  background: linear-gradient(to right top, #dfe9f3, #ffffff);
+  background-attachment: fixed;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === Sidebar Styling === */
+.sidebar {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  width: 240px;
+  transition: all 0.3s ease;
+}
+
+.sidebar .nav-link {
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin: 2px 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar .nav-link:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  background-color: #0d6efd;
+  color: white !important;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+
+/* === Cards with Glass Effect === */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* === Summary Cards === */
+.card-summary {
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card-summary:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-summary h6 {
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.card-summary h4 {
+  font-weight: bold;
+  color: #212529;
+}
+
+/* === Table === */
+.table thead th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+/* === Breadcrumbs === */
+.breadcrumb {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #0d6efd;
+  transition: color 0.2s ease;
+}
+
+.breadcrumb-item a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* === Folder Tree === */
+#folderTree ul {
+  padding-left: 20px;
+}
+
+.folder-link {
+  text-decoration: none;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.folder-link:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+/* === Buttons === */
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  transition: background 0.2s ease;
+}
+
+/* === Upload Form Fix === */
+#uploadForm label {
+  cursor: pointer;
+}
+
+/* === Spinner Centering === */
+#loadingSpinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* === Animations === */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.sidebar-title {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.75) !important;
+  border-right: 1px solid rgba(200,200,200,0.2);
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reporting - Document Overview</title>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <!-- SheetJS for Export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="/style.css"/>
+</head>
+<body class="bg-light">
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="fw-bold mb-0">📊 Reporting Overview</h3>
+      <a href="/dashboard.html" class="btn btn-outline-primary">
+        <i class="bi bi-arrow-left"></i> Back to Dashboard
+      </a>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <label for="sortSelect" class="form-label mb-0 me-2">Sort by:</label>
+        <select id="sortSelect" class="form-select d-inline-block w-auto" onchange="setSortOption(this.value)">
+          <option value="name">Folder Name</option>
+          <option value="count">Document Count</option>
+        </select>
+      </div>
+
+      <button class="btn btn-success" onclick="exportToExcel()">
+        <i class="bi bi-download"></i> Export to Excel
+      </button>
+    </div>
+
+    <!-- Reporting Content -->
+    <div id="reportContainer"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/reporting.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Excel Export Script -->
+  <script>
+    function exportToExcel() {
+      const tables = document.querySelectorAll("#reportContainer table");
+      const wb = XLSX.utils.book_new();
+
+      tables.forEach((table, idx) => {
+        const clone = table.cloneNode(true);
+        const rows = clone.querySelectorAll("tr");
+
+        rows.forEach(row => {
+          const cells = row.querySelectorAll("th, td");
+          if (cells.length > 4) row.removeChild(cells[cells.length - 1]);
+        });
+
+        const ws = XLSX.utils.table_to_sheet(clone);
+        XLSX.utils.book_append_sheet(wb, ws, `Folder ${idx + 1}`);
+      });
+
+      XLSX.writeFile(wb, "Reporting-Overview.xlsx");
+    }
+  </script>
+</body>
+</html>
